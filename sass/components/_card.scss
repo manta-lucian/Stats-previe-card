@@ -1,0 +1,92 @@
+.card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: $color-dark-p;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 5rem;
+  width: 65%;
+  justify-self: center;
+  &__heading {
+    color: $color-white;
+    font-size: 5rem;
+    span {
+      color: $color-violet;
+    }
+  }
+  &__text {
+    color: $color-white-75;
+    margin-bottom: 10rem;
+    font-size: 2.5rem;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.card-content__comp-head {
+  font-size: 3.5rem;
+  color: $color-white;
+}
+.card-content__comp-text {
+  text-transform: uppercase;
+  color: $color-white-60;
+  font-size: 2rem;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba($color-violet, 0.5), rgba($color-violet, 0.5)), url("../../images/image-header-desktop.jpg");
+  background-size: 100% 100%;
+}
+
+@media only screen and (max-width: 1300px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 50%;
+  }
+  .card-container {
+    grid-template-rows: 1fr 1.5fr;
+    width: 80%;
+    min-width: 45rem;
+    margin: 0 auto;
+  }
+  .card-content {
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+    &__info {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    &__text {
+      margin: 0;
+    }
+  }
+  .card-content__comp {
+    width: 12rem;
+  }
+  .card-image {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 40%;
+  }
+}
